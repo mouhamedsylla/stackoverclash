@@ -20,7 +20,7 @@ func (h *Home) View() []framego.View {
 	for _, v := range h.clashs {
 		render += v.Render()
 	}
-	principal := components.NewPrincipale("Clash⚡", "Last created clash")
+	principal := components.NewPrincipale("Clash⚡", "Last created clash", "5")
 
 	clashRender := framego.NewView("#clash", render)
 	principaleRender := framego.NewView("#clash-title", principal.Render())

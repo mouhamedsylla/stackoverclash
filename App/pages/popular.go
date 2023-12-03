@@ -10,7 +10,7 @@ type Popular struct {
 }
 
 func (p *Popular) View() []framego.View {
-	principal := components.NewPrincipale("Clash⚡", "Popular clash")
+	principal := components.NewPrincipale("Clash⚡", "Popular clash", "5")
 	principaleRender := framego.NewView("#clash-title", principal.Render())
 	clashRender := framego.NewView("#clash", "")
 	var views []framego.View

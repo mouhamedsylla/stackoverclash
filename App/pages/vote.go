@@ -10,7 +10,7 @@ type Vote struct {
 }
 
 func (n *Vote) View() []framego.View {
-	principal := components.NewPrincipale("Clash⚡", "Vote to clash !")
+	principal := components.NewPrincipale("Clash⚡", "Vote to clash !", "5")
 	principaleRender := framego.NewView("#clash-title", principal.Render())
 	clashRender := framego.NewView("#clash", "")
 	var views []framego.View

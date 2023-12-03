@@ -20,6 +20,7 @@ h2 {
     font-weight: 700;
 }
 
+
 /*  ------------- Header ----------- */
 .header div {
     display: flex;
@@ -166,12 +167,12 @@ p {
 #create-clash > a {
     text-decoration: none;
     color: azure;
+    background-color: #ea580c;
 }
 
 
 #clash-label {
     height: 1.5em;
-    width: 5em;
     border-radius: 15px;
     background-color: #ea580c;
     text-align: center;

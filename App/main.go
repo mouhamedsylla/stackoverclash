@@ -17,12 +17,14 @@ func main() {
 		"/new",
 		"/popular",
 		"/vote",
+		"/create",
 	}
 	pages := []pages.Pages{
 		&pages.Home{},
 		&pages.New{},
 		&pages.Popular{},
 		&pages.Vote{},
+		&pages.Createclash{},
 	}
 	for i, r := range routes {
 		router.AddRoute(r, pages[i].View())
