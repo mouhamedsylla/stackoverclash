@@ -65,7 +65,7 @@ func (r *Router) AddRoute(p string, v string) {
 // }
 
 func (r *Router) ResolvRoute(URL string) interface{} {
-	element := js.Global().Get("document").Call("querySelector", "#App")
+	element := js.Global().Get("document").Call("querySelector", "#clash")
 	match := MatchPath(URL)
 	for i, route := range r.routes {
 		if route.path == match {

@@ -196,14 +196,11 @@ p {
     background-color: hsl(12 6.5% 15.1%);
 }
 
-
 .progression-bar {
     display: block;
     width: 85vh;
     height: 3vh;
-    /* background-color: blue; */
-    display: flex;
-    
+    display: flex; 
 }
 
 #progress {
@@ -236,7 +233,7 @@ p {
 }
 
 .progress-bar1 {
-    width: 50%;
+    width: 70%;
     background-color: #4CAF50;
     transform: scaleX(0);
     transform-origin: left center;
@@ -244,11 +241,11 @@ p {
 }
 
 .progress-bar2 {
-    width: 50%;
+    width: 30%;
     transform: scaleX(0);
     transform-origin: right center;
     background-color: #2196F3;
-    animation: 3s progress ease-out forwards;
+    animation: 2s progress ease-out forwards;
 }
 
 
@@ -267,6 +264,24 @@ p {
       visibility: visible;
       opacity: 1;
     }
+  }
+
+  .stats {
+    padding: 1em 0;
+    display: inline-flex;
+    gap:0.7em
+  }
+
+  .stats > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    text-align: center;
+    background-color: hsl(12 6.5% 15.1%);
+    padding: 0.2em 1em;
+    border-radius: 15px;
+    font-size: 0.7em;
   }
 
 
