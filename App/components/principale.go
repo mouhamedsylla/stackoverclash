@@ -17,3 +17,10 @@ func (p *Principale) Render() string {
 	`
 	return framego.ParseComponent(component, &p)
 }
+
+func NewPrincipale(m, t string) Principale {
+	return Principale{
+		Mode: m,
+		Title: t,
+	}
+}

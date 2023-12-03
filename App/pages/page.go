@@ -1,5 +1,7 @@
 package pages
 
+import framego "stackoverclash/frameGo"
+
 type Pages interface{
-	View() string
+	View() []framego.View
 }

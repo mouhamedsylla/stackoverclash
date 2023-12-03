@@ -5,36 +5,51 @@ import (
 	"syscall/js"
 )
 
+type View struct {
+	selector string
+	html     string
+}
+
+func NewView(s, h string) View {
+	return View{
+		selector: s,
+		html:     h,
+	}
+}
+
 type Route struct {
-	path string
-	view string
+	path  string
+	views []View
 }
 
 type Router struct {
 	routes []Route
 }
 
-func (r *Router) AddRoute(p string, v string) {
+func (r *Router) AddRoute(p string, v []View) {
 	myRoute := Route{
-		path: p,
-		view: v,
+		path:  p,
+		views: v,
 	}
 	r.routes = append(r.routes, myRoute)
 }
 
-func (r *Router) ResolvRoute(URL string) interface{} {
-	element := js.Global().Get("document").Call("querySelector", "#clash")
+
+func (r *Router) ResolvRoute(URL string) {
+	var element js.Value
 	match := MatchPath(URL)
 	for i, route := range r.routes {
 		if route.path == match {
-			element.Set("innerHTML", route.view)
-			js.Global().Get("history").Call("pushState", js.Null(), "", route.path)
+			for _, view := range route.views {
+				element = js.Global().Get("document").Call("querySelector", view.selector)
+				element.Set("innerHTML", view.html)
+				js.Global().Get("history").Call("pushState", js.Null(), "", route.path)
+			}
 			break
-		 } else if i == len(r.routes)-1 {
+		} else if i == len(r.routes)-1 {
 			element.Set("innerHTML", "<h1>Error 404: Page Not Found")
 		}
 	}
-	return nil
 }
 
 func MatchPath(url string) string {
@@ -45,3 +60,5 @@ func MatchPath(url string) string {
 	}
 	return ""
 }
+
+

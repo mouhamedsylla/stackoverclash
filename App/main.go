@@ -14,9 +14,15 @@ func main() {
 	router := &framego.Router{}
 	routes := []string{
 		"/",
+		"/new",
+		"/popular",
+		"/vote",
 	}
 	pages := []pages.Pages{
 		&pages.Home{},
+		&pages.New{},
+		&pages.Popular{},
+		&pages.Vote{},
 	}
 	for i, r := range routes {
 		router.AddRoute(r, pages[i].View())
