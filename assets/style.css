@@ -116,7 +116,7 @@ ul > a {
 }
 
 a:focus {
-    background-color: hsl(12 6.5% 15.1%);;
+    background-color: hsl(12 6.5% 15.1%);
 }
 
 nav {
@@ -182,13 +182,92 @@ p {
 /* ----------- Clash blocs ------------- */
 
 .clash-created {
-    width: 89vh;
+    width: 85vh;
     height: 20vh;
-    margin-left: 1em;
+    margin: 1em;
     border: 1px solid ;
     border-color: hsl(12 6.5% 15.1%);
     padding-left: 1em;
     padding-right: 1em;
+
 }
+
+.clash-created:hover {
+    background-color: hsl(12 6.5% 15.1%);
+}
+
+
+.progression-bar {
+    display: block;
+    width: 85vh;
+    height: 3vh;
+    /* background-color: blue; */
+    display: flex;
+    
+}
+
+#progress {
+    color: azure;
+    font-size: 0.9em;
+    font-weight: 700;
+    font-style: bold;
+    text-shadow: 0px 0px 4px hsl(20 14.3% 4.1% / 0.8%);
+    animation: fadeIn 5s ease-in-out;
+}
+
+.techno-clash {
+    display: flex;
+    justify-content: space-between;
+}
+
+.techno-clash > p {
+    margin:0.5em 0;
+}
+
+.progress-bar {
+    height: 100%;
+}
+
+.progression-bar > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.progress-bar1 {
+    width: 50%;
+    background-color: #4CAF50;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: 3s progress ease-out forwards;
+}
+
+.progress-bar2 {
+    width: 50%;
+    transform: scaleX(0);
+    transform-origin: right center;
+    background-color: #2196F3;
+    animation: 3s progress ease-out forwards;
+}
+
+
+@keyframes progress {
+    to{
+      transform: scaleX(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
 
 
