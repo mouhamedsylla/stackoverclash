@@ -7,8 +7,8 @@ type Home struct {
 }
 
 func (h *Home) View() string {
-	clash1 := components.NewClash(0, 10, 7, []string{"Angular", "React"})
-	clash2 := components.NewClash(1, 120, 54, []string{"Golang", "Rust"})
+	clash1 := components.NewClash(0, 10, 7, "Angular", "React")
+	clash2 := components.NewClash(1, 120, 54, "Golang", "Rust")
 
 	tabClash := []components.Clash{clash1, clash2}
 	h.clashs = append(h.clashs, tabClash...)

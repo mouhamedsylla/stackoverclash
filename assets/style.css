@@ -208,7 +208,7 @@ p {
     font-size: 0.9em;
     font-weight: 700;
     font-style: bold;
-    text-shadow: 0px 0px 4px hsl(20 14.3% 4.1% / 0.8%);
+    text-shadow: 0px 0px 4px hsl(0 0% 100%) / 0.8;
     animation: fadeIn 5s ease-in-out;
 }
 
